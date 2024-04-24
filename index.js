@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
 });
 
 App.get("/", (req, res) => {
-    res.send("Sup");
+    res.send("Hello");
 });
 
 server.listen(port, () => {
