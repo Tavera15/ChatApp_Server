@@ -11,13 +11,14 @@ const server = http.createServer(App);
 
 const io = new Server(server, {
     cors: {
-      origin: 'http://localhost:3000',
+      origin: 'https://effortless-starship-38a8e8.netlify.app/',
       methods: ['GET', 'POST'],
     },
 });
 
 io.on('connection', (socket) => {
-  
+    console.log("Socket joined");
+    
     socket.on("self_joined", async (data) => {
         const {username, room} = data;
         socket.join(room);
