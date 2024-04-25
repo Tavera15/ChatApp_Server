@@ -17,7 +17,7 @@ const io = new Server(server, {
       transports: ['websocket']
     },
 });
-
+console.log("s");
 io.on('connection', (socket) => {
     console.log("Socket joined");
 
