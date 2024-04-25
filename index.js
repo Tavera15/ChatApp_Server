@@ -5,20 +5,14 @@ http = require("http");
 const port = process.env.PORT || 4000;
 
 App.use(cors());
-App.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
-    res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-    next();
-});
+
 
 const {Server} = require("socket.io");
 const server = http.createServer(App);
 
 const io = new Server(server, {
     cors: {
-      origins: 'https://effortless-starship-38a8e8.netlify.app',
+      origin: ['https://effortless-starship-38a8e8.netlify.app', 'http://localhost:3000'],
       methods: ['GET', 'POST'],
       credentials: true
     },
