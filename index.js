@@ -13,6 +13,7 @@ const io = new Server(server, {
     cors: {
       origin: 'https://effortless-starship-38a8e8.netlify.app/',
       methods: ['GET', 'POST'],
+      credentials: true
     },
 });
 
