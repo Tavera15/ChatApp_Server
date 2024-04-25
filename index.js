@@ -11,7 +11,7 @@ const server = http.createServer(App);
 
 const io = new Server(server, {
     cors: {
-      origins: 'https://effortless-starship-38a8e8.netlify.app/',
+      origins: ':*:',
       methods: ['GET', 'POST'],
       credentials: true,
       transports: ['websocket']
