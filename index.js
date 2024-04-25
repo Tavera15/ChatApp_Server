@@ -2,7 +2,7 @@ const express = require("express");
 const App = express();
 const cors = require("cors");
 http = require("http");
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 App.use(cors());
 
@@ -18,7 +18,7 @@ const io = new Server(server, {
 
 io.on('connection', (socket) => {
     console.log("Socket joined");
-    
+
     socket.on("self_joined", async (data) => {
         const {username, room} = data;
         socket.join(room);
