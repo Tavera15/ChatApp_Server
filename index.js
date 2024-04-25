@@ -18,13 +18,14 @@ const server = http.createServer(App);
 
 const io = new Server(server, {
     cors: {
-      origins: ':*:',
+      origins: 'https://effortless-starship-38a8e8.netlify.app',
       methods: ['GET', 'POST'],
-      credentials: true,
-      transports: ['websocket']
+      credentials: true
     },
 });
+
 console.log("s");
+
 io.on('connection', (socket) => {
     console.log("Socket joined");
 
